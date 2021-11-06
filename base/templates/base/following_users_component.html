@@ -1,0 +1,29 @@
+<div class="activities">
+    <div class="activities__header">
+      <h2>{{side_title}}</h2>
+    </div>
+    {% for user in following %} 
+        <div class="activities__box">
+        <div class="activities__boxHeader roomListRoom__header">
+            <a href="{% url 'profile' user.id %}" class="roomListRoom__author">
+            <div class="avatar avatar--small">
+                <img src="{{user.avatar.url}}" />
+            </div>
+            <p>
+                @{{user.username}}
+            </p>
+            </a>
+        </div>
+        </div>
+    {% endfor %}
+    <a class="btn btn--link" href="{% url 'followed_users' followed_by.id %}">
+        More
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <title>chevron-down</title>
+        <path d="M16 21l-13-13h-3l16 16 16-16h-3l-13 13z"></path>
+        </svg>
+    </a>
+</div>
+
+  </div>
+  
